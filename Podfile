@@ -6,6 +6,7 @@ target 'StarsTop' do
   use_frameworks!
 
   # Pods for StarsTop
+  pod "Alamofire"
 
   target 'StarsTopTests' do
     inherit! :search_paths
