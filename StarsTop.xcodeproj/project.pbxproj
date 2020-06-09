@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		8D893FE6248F114F00D2198E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D893FE5248F114F00D2198E /* AppDelegate.swift */; };
 		8D893FE8248F114F00D2198E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D893FE7248F114F00D2198E /* SceneDelegate.swift */; };
-		8D893FEA248F114F00D2198E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D893FE9248F114F00D2198E /* ViewController.swift */; };
-		8D893FED248F114F00D2198E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D893FEB248F114F00D2198E /* Main.storyboard */; };
 		8D893FEF248F115100D2198E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D893FEE248F115100D2198E /* Assets.xcassets */; };
 		8D893FF2248F115100D2198E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D893FF0248F115100D2198E /* LaunchScreen.storyboard */; };
 		8D893FFD248F115200D2198E /* StarsTopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D893FFC248F115200D2198E /* StarsTopTests.swift */; };
+		8D89400F248F142F00D2198E /* RepoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D89400E248F142F00D2198E /* RepoListView.swift */; };
+		8D894011248F143E00D2198E /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D894010248F143E00D2198E /* RepoListViewController.swift */; };
+		8D894013248F144B00D2198E /* RepoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D894012248F144B00D2198E /* RepoListInteractor.swift */; };
+		8D894015248F145600D2198E /* RepoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D894014248F145600D2198E /* RepoListPresenter.swift */; };
+		8D894017248F148D00D2198E /* RepoListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D894016248F148D00D2198E /* RepoListRouter.swift */; };
+		8D894019248F149D00D2198E /* RepoListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D894018248F149D00D2198E /* RepoListConfigurator.swift */; };
+		8D89401B248F24D500D2198E /* RepoListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D89401A248F24D500D2198E /* RepoListModels.swift */; };
+		8D89401D248F25AD00D2198E /* RepoListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D89401C248F25AD00D2198E /* RepoListWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +36,20 @@
 		8D893FE2248F114F00D2198E /* StarsTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarsTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D893FE5248F114F00D2198E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D893FE7248F114F00D2198E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8D893FE9248F114F00D2198E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8D893FEC248F114F00D2198E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D893FEE248F115100D2198E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D893FF1248F115100D2198E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D893FF3248F115100D2198E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D893FF8248F115200D2198E /* StarsTopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarsTopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D893FFC248F115200D2198E /* StarsTopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsTopTests.swift; sourceTree = "<group>"; };
 		8D893FFE248F115200D2198E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D89400E248F142F00D2198E /* RepoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListView.swift; sourceTree = "<group>"; };
+		8D894010248F143E00D2198E /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
+		8D894012248F144B00D2198E /* RepoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListInteractor.swift; sourceTree = "<group>"; };
+		8D894014248F145600D2198E /* RepoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListPresenter.swift; sourceTree = "<group>"; };
+		8D894016248F148D00D2198E /* RepoListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListRouter.swift; sourceTree = "<group>"; };
+		8D894018248F149D00D2198E /* RepoListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListConfigurator.swift; sourceTree = "<group>"; };
+		8D89401A248F24D500D2198E /* RepoListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListModels.swift; sourceTree = "<group>"; };
+		8D89401C248F25AD00D2198E /* RepoListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +91,11 @@
 		8D893FE4248F114F00D2198E /* StarsTop */ = {
 			isa = PBXGroup;
 			children = (
-				8D893FE5248F114F00D2198E /* AppDelegate.swift */,
-				8D893FE7248F114F00D2198E /* SceneDelegate.swift */,
-				8D893FE9248F114F00D2198E /* ViewController.swift */,
-				8D893FEB248F114F00D2198E /* Main.storyboard */,
-				8D893FEE248F115100D2198E /* Assets.xcassets */,
+				8D894007248F126300D2198E /* Application */,
+				8D894008248F126D00D2198E /* Presentation */,
+				8D89400B248F12C800D2198E /* Core */,
+				8D89400A248F12B100D2198E /* Business */,
+				8D89400C248F133900D2198E /* Assets */,
 				8D893FF0248F115100D2198E /* LaunchScreen.storyboard */,
 				8D893FF3248F115100D2198E /* Info.plist */,
 			);
@@ -97,6 +109,68 @@
 				8D893FFE248F115200D2198E /* Info.plist */,
 			);
 			path = StarsTopTests;
+			sourceTree = "<group>";
+		};
+		8D894007248F126300D2198E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8D893FE7248F114F00D2198E /* SceneDelegate.swift */,
+				8D893FE5248F114F00D2198E /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8D894008248F126D00D2198E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8D894009248F129200D2198E /* Modules */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8D894009248F129200D2198E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8D89400D248F13F100D2198E /* RepoList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8D89400A248F12B100D2198E /* Business */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		8D89400B248F12C800D2198E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8D89400C248F133900D2198E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8D893FEE248F115100D2198E /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		8D89400D248F13F100D2198E /* RepoList */ = {
+			isa = PBXGroup;
+			children = (
+				8D89400E248F142F00D2198E /* RepoListView.swift */,
+				8D894010248F143E00D2198E /* RepoListViewController.swift */,
+				8D894012248F144B00D2198E /* RepoListInteractor.swift */,
+				8D894014248F145600D2198E /* RepoListPresenter.swift */,
+				8D894016248F148D00D2198E /* RepoListRouter.swift */,
+				8D894018248F149D00D2198E /* RepoListConfigurator.swift */,
+				8D89401A248F24D500D2198E /* RepoListModels.swift */,
+				8D89401C248F25AD00D2198E /* RepoListWorker.swift */,
+			);
+			path = RepoList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +256,6 @@
 			files = (
 				8D893FF2248F115100D2198E /* LaunchScreen.storyboard in Resources */,
 				8D893FEF248F115100D2198E /* Assets.xcassets in Resources */,
-				8D893FED248F114F00D2198E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +273,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D893FEA248F114F00D2198E /* ViewController.swift in Sources */,
+				8D894013248F144B00D2198E /* RepoListInteractor.swift in Sources */,
+				8D894011248F143E00D2198E /* RepoListViewController.swift in Sources */,
+				8D89401B248F24D500D2198E /* RepoListModels.swift in Sources */,
+				8D894019248F149D00D2198E /* RepoListConfigurator.swift in Sources */,
+				8D894017248F148D00D2198E /* RepoListRouter.swift in Sources */,
+				8D894015248F145600D2198E /* RepoListPresenter.swift in Sources */,
 				8D893FE6248F114F00D2198E /* AppDelegate.swift in Sources */,
+				8D89400F248F142F00D2198E /* RepoListView.swift in Sources */,
 				8D893FE8248F114F00D2198E /* SceneDelegate.swift in Sources */,
+				8D89401D248F25AD00D2198E /* RepoListWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,14 +305,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8D893FEB248F114F00D2198E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8D893FEC248F114F00D2198E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8D893FF0248F115100D2198E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
