@@ -11,6 +11,12 @@ target 'StarsTop' do
   target 'StarsTopTests' do
     inherit! :search_paths
     # Pods for testing
+    
+    pod "Quick"
+    pod "Nimble"
+    pod "KIF"
+    pod "iOSSnapshotTestCase"
+    
   end
 
 end
