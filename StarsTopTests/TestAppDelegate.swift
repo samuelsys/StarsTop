@@ -6,4 +6,14 @@
 //  Copyright © 2020 Test. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class TestAppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        window = WindowFactory.make()
+    }
+    
+}

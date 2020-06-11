@@ -4,10 +4,53 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>StarsTop.xcscheme_^#shared#^_</key>
+		<key>StarsTop-Dev.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>1</integer>
+		</dict>
+		<key>StarsTop-Hml.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>StarsTop-Mock.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>StarsTop-Prod.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8D893FE1248F114F00D2198E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8D893FF7248F115200D2198E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8D8940332491186900D2198E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8D89404E2491186F00D2198E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8D894069249118C300D2198E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
