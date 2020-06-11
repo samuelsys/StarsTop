@@ -8,13 +8,24 @@
 
 import Foundation
 
+typealias DataResponseRepositories = ((Repository, Error)) -> Void
+
 protocol RepoListWorkerProtocol {
-    func getRepositories()
+    func getRepositories(completion: @escaping DataResponseRepositories)
 }
 
 class RepoListWorker: RepoListWorkerProtocol {
     
-    func getRepositories() {
+    private let api: ApiProtocol
+    
+    init(api: ApiProtocol) {
+        self.api = api
+    }
+    
+    func getRepositories(completion: @escaping DataResponseRepositories) {
+        api.get(decoder: Repository.self) { (dataResponse) in
+            print(dataResponse)
+        }
     }
     
 }

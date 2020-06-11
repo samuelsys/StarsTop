@@ -15,12 +15,21 @@ protocol RepoListInteractorProtocol: class {
 
 class RepoListInteractor {
     
-    var presenter: RepoListPresenter?
+    private var presenter: RepoListInteractorOutputProtocol?
+    private var worker: RepoListWorkerProtocol
+    
+    init(presenter: RepoListInteractorOutputProtocol, worker: RepoListWorkerProtocol) {
+        self.presenter = presenter
+        self.worker = worker
+    }
     
     //private let repositoryService = RepoListService()
     //private var repositories: [Repository] = []
     
-    func viewDidLoad()  {
+    func viewDidLoad() {
+        worker.getRepositories { (repositoryResponseTuple) in
+            //business logic
+        }
     }
     
     func didSelectRow(at index: Int) {

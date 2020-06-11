@@ -9,16 +9,15 @@
 import Alamofire
 
 protocol ApiProtocol {
-    func get()
-    func post()
+    func get<T: Decodable>(decoder: T.Type, completion: @escaping (DataResponse<T, AFError>) -> Void)
 }
 
 class Api: ApiProtocol {
     
-    func get() {
+    func get<T: Decodable>(decoder: T.Type, completion: @escaping (DataResponse<T, AFError>) -> Void) {
+        AF.request(ApiConstants.baseUrl, method: .get)
+            .responseDecodable(of: T.self) { (responseData) in
+                completion(responseData)
+        }
     }
-    
-    func post() {
-    }
-    
 }

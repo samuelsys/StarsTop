@@ -13,15 +13,17 @@ class RepoListConfigurator {
     static func configureModule(viewController: RepoListViewController) {
         let view = RepoListView()
         let router = RepoListRouter()
-        let interactor = RepoListInteractor()
+        
+        let api = Api()
         let presenter = RepoListPresenter()
+        
+        let worker = RepoListWorker(api: api)
+        let interactor = RepoListInteractor(presenter: presenter, worker: worker)
         
         viewController.repoListView = view
         viewController.router = router
         viewController.interactor = interactor
-        
-        interactor.presenter = presenter
-        
+                
         presenter.viewController = viewController
         
         router.navigationController = viewController.navigationController
