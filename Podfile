@@ -7,7 +7,7 @@ def commoms
 end
 
 def tests
-  pod "Quick"
+  pod 'Quick'
   pod "Nimble"
   pod "KIF"
   pod "iOSSnapshotTestCase"

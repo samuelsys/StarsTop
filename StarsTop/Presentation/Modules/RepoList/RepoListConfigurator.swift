@@ -10,11 +10,14 @@ import UIKit
 
 class RepoListConfigurator {
     
-    static func configureModule(viewController: RepoListViewController) {
+    static func configureModule(viewController: RepoListViewController, environment: Environment) {
         let view = RepoListView()
         let router = RepoListRouter()
         
-        let api = Api()
+        let requestAlamofireApi = AlamofireApiRequest()
+        let mockRequest = MockRequest()
+        
+        let api = RequestManager(environment: environment, alamofireApiRequest: requestAlamofireApi, mockRequest: mockRequest)
         let presenter = RepoListPresenter()
         
         let worker = RepoListWorker(api: api)

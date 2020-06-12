@@ -13,7 +13,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
-        window = WindowFactory.make(withViewController: RepoListViewController())
+        let initialAppViewController = RepoListViewController()
+        RepoListConfigurator.configureModule(viewController: initialAppViewController, environment: Environment())
+        window = WindowFactory.make(withViewController: initialAppViewController)
     }
-    
 }
