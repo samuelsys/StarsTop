@@ -7,15 +7,14 @@
 //
 
 import Foundation
-import UIKit
-
-private struct EnvironmentConstants {
-    static let infoPlistSchemeConfiguration = "Configuration"
-    static let infoPlistSchemeEndpoint = "Endpoint"
-    static let unknownScheme = "unknown"
-}
 
 final class Environment {
+    
+    private struct Constants {
+        static let infoPlistSchemeConfiguration = "Configuration"
+        static let infoPlistSchemeEndpoint = "Endpoint"
+        static let unknownScheme = "unknown"
+    }
     
     enum Scheme: String {
         case mock = "mock"
@@ -29,15 +28,15 @@ final class Environment {
         if let configuration = Bundle.main.object(forInfoDictionaryKey: conf) as? String {
             return configuration
         }
-        return EnvironmentConstants.unknownScheme
+        return Constants.unknownScheme
     }
     
     func getCurrentApiURL() -> String {
-        return getConfiguration(EnvironmentConstants.infoPlistSchemeEndpoint)
+        return getConfiguration(Constants.infoPlistSchemeEndpoint)
     }
     
     func getCurrent() -> Scheme {
-        let buildScheme = getConfiguration(EnvironmentConstants.infoPlistSchemeConfiguration)
+        let buildScheme = getConfiguration(Constants.infoPlistSchemeConfiguration)
         return Scheme.init(rawValue: buildScheme) ?? Scheme.unknown
     }
 }
