@@ -6,8 +6,6 @@
 //  Copyright © 2020 Test. All rights reserved.
 //
 
-import Alamofire
-
 enum HttpMethod {
     case get
     case post

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 final class RequestManager: RequestProtocol {
     
     private var environment: Environment
