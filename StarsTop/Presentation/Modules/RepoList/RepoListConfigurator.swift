@@ -17,7 +17,7 @@ class RepoListConfigurator {
         let requestAlamofireApi = AlamofireApiRequest()
         let mockRequest = MockRequest()
         
-        let api = RequestManager(environment: environment, alamofireApiRequest: requestAlamofireApi, mockRequest: mockRequest)
+        let api = RequestManager(environment: environment, apiRequest: requestAlamofireApi, mockRequest: mockRequest)
         let presenter = RepoListPresenter()
         
         let worker = RepoListWorker(api: api)

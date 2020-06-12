@@ -10,6 +10,7 @@ import Alamofire
 
 enum AlamofireApiError: Error {
     case noMethodSpecified
+    case noBaseUrlSpecified
 }
 
 final class AlamofireApiRequest: RequestProtocol {
@@ -20,7 +21,11 @@ final class AlamofireApiRequest: RequestProtocol {
             return completion(.failure(AlamofireApiError.noMethodSpecified))
         }
         
-        AF.request(requestModel.path, method: getAlamofireMethod(method))
+        guard let baseUrl = requestModel.baseUrl else {
+            return completion(.failure(AlamofireApiError.noBaseUrlSpecified))
+        }
+        
+        AF.request(baseUrl + requestModel.path, method: getAlamofireMethod(method))
             .responseDecodable(of: T.self) { (response) in
               switch response.result {
                   case .success(let result):

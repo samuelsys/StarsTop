@@ -13,6 +13,7 @@ enum HttpMethod {
 
 struct RequestModel<T> {
     let decoder: T.Type
+    let baseUrl: String?
     let path: String
     let method: HttpMethod?
 }
