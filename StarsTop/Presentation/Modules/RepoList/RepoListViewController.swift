@@ -9,8 +9,8 @@
 import UIKit
 
 protocol RepoListPresenterOutputProtocol: class {
-    func presenter(didRetrieveItems items: [String])
-    func presenter(didFailRetrieveItems message: String)
+    func presenter(didRetrieveItems items: [RepositoryViewModel])
+    func presenter(didFailRetrieveItems error: Error)
 }
 
 final class RepoListViewController: UIViewController, RepoListPresenterOutputProtocol {
@@ -44,10 +44,10 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
     
     // MARK: - RepoPresenterOutputProtocol conforms
     
-    func presenter(didRetrieveItems items: [String]) {
+    func presenter(didRetrieveItems items: [RepositoryViewModel]) {
     }
     
-    func presenter(didFailRetrieveItems message: String) {
+    func presenter(didFailRetrieveItems message: Error) {
     }
     
 }

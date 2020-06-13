@@ -20,9 +20,11 @@ final class RepoListPresenter: RepoListInteractorOutputProtocol {
     // MARK: - RepoListPresenterProtocol conforms
     
     func interactor(didRetrieveRepositories repositories: [RepositoryViewModel]) {
+        viewController?.presenter(didRetrieveItems: repositories)
     }
     
     func interactor(didFailRetrieveRepositories error: Error) {
+        viewController?.presenter(didFailRetrieveItems: error)
     }
     
 }
