@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepoListConfigurator: ArchConfiguratorProtocol {
+final class RepoListConfigurator: ArchConfiguratorProtocol {
         
     static func configureModule(configuratorModel: ArchConfiguratorModel) {
         let view = RepoListView()

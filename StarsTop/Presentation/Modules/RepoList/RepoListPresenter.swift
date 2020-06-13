@@ -13,7 +13,7 @@ protocol RepoListInteractorOutputProtocol: class {
     func interactor(didFailRetrieveRepositories error: Error)
 }
 
-class RepoListPresenter: RepoListInteractorOutputProtocol {
+final class RepoListPresenter: RepoListInteractorOutputProtocol {
     
     weak var viewController: RepoListPresenterOutputProtocol?
     

@@ -12,6 +12,6 @@ protocol RepoListRouterProtocol: class {
     var navigationController: UINavigationController? { get }
 }
 
-class RepoListRouter: RepoListRouterProtocol {
+final class RepoListRouter: RepoListRouterProtocol {
     weak var navigationController: UINavigationController?
 }

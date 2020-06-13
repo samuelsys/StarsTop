@@ -14,7 +14,7 @@ protocol RepoListWorkerProtocol {
     func getRepositories(completion: @escaping DataResponseRepositories)
 }
 
-class RepoListWorker: RepoListWorkerProtocol {
+final class RepoListWorker: RepoListWorkerProtocol {
     
     private enum RepoListUrlPaths {
         static let swiftRepositoriesSortedByStars = "/search/repositories?q=language:swift&sort=stars"
@@ -36,7 +36,4 @@ class RepoListWorker: RepoListWorkerProtocol {
             
         }
     }
-    
-  
-    
 }

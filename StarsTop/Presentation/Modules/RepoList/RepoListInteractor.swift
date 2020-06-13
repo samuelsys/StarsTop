@@ -13,7 +13,7 @@ protocol RepoListInteractorProtocol: class {
     func didSelectRow(at index: Int)
 }
 
-class RepoListInteractor {
+final class RepoListInteractor {
     
     private var presenter: RepoListInteractorOutputProtocol?
     private var worker: RepoListWorkerProtocol

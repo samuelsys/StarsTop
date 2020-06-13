@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepoListView: UIView {
+final class RepoListView: UIView {
     
     // MARK: - Properties
     lazy var tableView: UITableView = {

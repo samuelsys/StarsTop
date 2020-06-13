@@ -13,7 +13,7 @@ protocol RepoListPresenterOutputProtocol: class {
     func presenter(didFailRetrieveItems message: String)
 }
 
-class RepoListViewController: UIViewController, RepoListPresenterOutputProtocol {
+final class RepoListViewController: UIViewController, RepoListPresenterOutputProtocol {
     
     // MARK: - Properties
     var repoListView: RepoListView?
