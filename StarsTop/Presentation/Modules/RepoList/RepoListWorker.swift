@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias DataResponseRepositories = ((Repository, Error)) -> Void
+typealias DataResponseRepositories = ((repository: Repository?, error: Error?)) -> Void
 
 protocol RepoListWorkerProtocol {
     func getRepositories(completion: @escaping DataResponseRepositories)
@@ -33,7 +33,14 @@ final class RepoListWorker: RepoListWorkerProtocol {
                                         method: .get)
         
         client.request(model: requestModel) { (result) in
-            
+            switch result {
+            case .success(let result):
+                if let repository = result as? Repository {
+                    completion((repository: repository, error: nil))
+                }
+            case .failure(let error):
+                completion((repository: nil, error: error))
+            }
         }
     }
 }

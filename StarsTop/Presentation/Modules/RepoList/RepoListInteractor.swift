@@ -15,7 +15,11 @@ protocol RepoListInteractorProtocol: class {
 
 final class RepoListInteractor {
     
-    private var presenter: RepoListInteractorOutputProtocol?
+    private enum RepoListInteractorError: Error {
+        case genericError
+    }
+    
+    private var presenter: RepoListInteractorOutputProtocol
     private var worker: RepoListWorkerProtocol
     
     init(presenter: RepoListInteractorOutputProtocol, worker: RepoListWorkerProtocol) {
@@ -23,16 +27,27 @@ final class RepoListInteractor {
         self.worker = worker
     }
     
-    //private let repositoryService = RepoListService()
-    //private var repositories: [Repository] = []
-    
     func viewDidLoad() {
-        worker.getRepositories { (repositoryResponseTuple) in
-            //business logic
+        worker.getRepositories { [weak self] (repositoryResponse) in
+                        
+            guard let repositoryDecodable = repositoryResponse.repository else {
+                let error = repositoryResponse.error ?? RepoListInteractorError.genericError
+                self?.presenter.interactor(didFailRetrieveRepositories: error)
+                return
+            }
+            self?.presenter.interactor(didRetrieveRepositories: repositoryDecodable.toRepositoryViewModelList())
         }
     }
     
     func didSelectRow(at index: Int) {
     }
     
+}
+
+extension Repository {
+    func toRepositoryViewModelList() -> [RepositoryViewModel] {
+        return self.items.map { (item) -> RepositoryViewModel in
+            return RepositoryViewModel(name: item.name, stars: item.stars, photo: item.owner.avatarUrl, author: item.owner.login)
+        }
+    }
 }

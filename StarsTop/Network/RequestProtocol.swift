@@ -18,7 +18,7 @@ struct RequestModel<T> {
 }
 
 protocol RequestProtocol {
-    typealias Result = ((Swift.Result<Decodable, Error>) -> Void)
+    typealias Result = ((Swift.Result<Any, Error>) -> Void)
     
     var environment: Environment {get set}
     
