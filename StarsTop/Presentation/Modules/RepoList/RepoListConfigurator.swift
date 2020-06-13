@@ -8,27 +8,27 @@
 
 import UIKit
 
-class RepoListConfigurator {
-    
-    static func configureModule(viewController: RepoListViewController, environment: Environment) {
+class RepoListConfigurator: ArchConfiguratorProtocol {
+        
+    static func configureModule(configuratorModel: ArchConfiguratorModel) {
         let view = RepoListView()
+        
         let router = RepoListRouter()
+          
+        let worker = RepoListWorker(client: configuratorModel.clientRequest)
         
-        let requestAlamofireApi = AlamofireApiRequest()
-        let mockRequest = MockRequest()
-        
-        let api = RequestManager(environment: environment, apiRequest: requestAlamofireApi, mockRequest: mockRequest)
         let presenter = RepoListPresenter()
         
-        let worker = RepoListWorker(api: api)
         let interactor = RepoListInteractor(presenter: presenter, worker: worker)
         
-        viewController.repoListView = view
-        viewController.router = router
-        viewController.interactor = interactor
-                
-        presenter.viewController = viewController
-        
-        router.navigationController = viewController.navigationController
+        if let repoViewController = configuratorModel.viewController as? RepoListViewController {
+            repoViewController.repoListView = view
+            repoViewController.router = router
+            repoViewController.interactor = interactor
+            
+            presenter.viewController = repoViewController
+            
+            router.navigationController = configuratorModel.viewController.navigationController
+        }
     }
 }

@@ -14,7 +14,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         let initialAppViewController = RepoListViewController()
-        RepoListConfigurator.configureModule(viewController: initialAppViewController, environment: Environment())
+        ArchConfiguratorFactory.configureInitialArchFlow(decoder: RepoListConfigurator.self, viewController: initialAppViewController)
         window = WindowFactory.make(withViewController: initialAppViewController)
     }
 }

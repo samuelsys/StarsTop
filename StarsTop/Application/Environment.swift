@@ -13,7 +13,7 @@ final class Environment {
     private struct Constants {
         static let infoPlistSchemeConfiguration = "Configuration"
         static let infoPlistSchemeEndpoint = "Endpoint"
-        static let unknownScheme = "unknown"
+        static let unknown = "unknown"
     }
     
     enum Scheme: String {
@@ -28,7 +28,7 @@ final class Environment {
         if let configuration = Bundle.main.object(forInfoDictionaryKey: conf) as? String {
             return configuration
         }
-        return Constants.unknownScheme
+        return Constants.unknown
     }
     
     func getCurrentApiURL() -> String {

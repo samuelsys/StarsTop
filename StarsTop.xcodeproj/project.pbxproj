@@ -28,6 +28,9 @@
 		8DC19672249327070074747A /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC19671249327070074747A /* MockRequest.swift */; };
 		8DC19674249331950074747A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC19673249331950074747A /* Environment.swift */; };
 		8DC196772493CE670074747A /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC196762493CE670074747A /* RequestManager.swift */; };
+		8DC1967A249418D30074747A /* ArchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC19679249418D30074747A /* ArchConfigurator.swift */; };
+		8DC1967C24941A1F0074747A /* ArchConfiguratorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC1967B24941A1F0074747A /* ArchConfiguratorModel.swift */; };
+		8DC1967E24941B3C0074747A /* ArchConfiguratorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC1967D24941B3C0074747A /* ArchConfiguratorFactory.swift */; };
 		F5204EEF929D691E51143176 /* Pods_StarsTopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C9EAAED74D95990F734F65 /* Pods_StarsTopTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,9 @@
 		8DC19671249327070074747A /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
 		8DC19673249331950074747A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		8DC196762493CE670074747A /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		8DC19679249418D30074747A /* ArchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchConfigurator.swift; sourceTree = "<group>"; };
+		8DC1967B24941A1F0074747A /* ArchConfiguratorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchConfiguratorModel.swift; sourceTree = "<group>"; };
+		8DC1967D24941B3C0074747A /* ArchConfiguratorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchConfiguratorFactory.swift; sourceTree = "<group>"; };
 		9361833234403EB7BF365A4A /* Pods-StarsTop.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.develop.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.develop.xcconfig"; sourceTree = "<group>"; };
 		A2521165746777FB0889C4A4 /* Pods-StarsTop.homolog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.homolog.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.homolog.xcconfig"; sourceTree = "<group>"; };
 		B8C9EAAED74D95990F734F65 /* Pods_StarsTopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarsTopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +138,7 @@
 		8D893FE4248F114F00D2198E /* StarsTop */ = {
 			isa = PBXGroup;
 			children = (
+				8DC19678249418B60074747A /* Shared */,
 				8D89402E249044F500D2198E /* Network */,
 				8D894007248F126300D2198E /* Application */,
 				8D89401E2490202100D2198E /* Factories */,
@@ -202,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				8D89401F2490203B00D2198E /* WindowFactory.swift */,
+				8DC1967D24941B3C0074747A /* ArchConfiguratorFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -261,6 +269,15 @@
 				8DC1964D2492F0F20074747A /* ApiTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		8DC19678249418B60074747A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8DC19679249418D30074747A /* ArchConfigurator.swift */,
+				8DC1967B24941A1F0074747A /* ArchConfiguratorModel.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		C161CD733317025827863A66 /* Pods */ = {
@@ -466,6 +483,7 @@
 				8D894071249118C300D2198E /* WindowFactory.swift in Sources */,
 				8D894072249118C300D2198E /* RepoListRouter.swift in Sources */,
 				8D894073249118C300D2198E /* AlamofireApiRequest.swift in Sources */,
+				8DC1967A249418D30074747A /* ArchConfigurator.swift in Sources */,
 				8D894074249118C300D2198E /* RepoListPresenter.swift in Sources */,
 				8DC19674249331950074747A /* Environment.swift in Sources */,
 				8D894075249118C300D2198E /* main.swift in Sources */,
@@ -473,6 +491,8 @@
 				8DC19672249327070074747A /* MockRequest.swift in Sources */,
 				8D894077249118C300D2198E /* RepoListView.swift in Sources */,
 				8D894078249118C300D2198E /* RepoListWorker.swift in Sources */,
+				8DC1967E24941B3C0074747A /* ArchConfiguratorFactory.swift in Sources */,
+				8DC1967C24941A1F0074747A /* ArchConfiguratorModel.swift in Sources */,
 				8DC19670249326D60074747A /* RequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

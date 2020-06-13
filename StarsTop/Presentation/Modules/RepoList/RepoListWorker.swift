@@ -16,16 +16,14 @@ protocol RepoListWorkerProtocol {
 
 class RepoListWorker: RepoListWorkerProtocol {
     
-    private let api: RequestProtocol
+    private let client: RequestProtocol
     
-    init(api: RequestProtocol) {
-        self.api = api
+    init(client: RequestProtocol) {
+        self.client = client
     }
     
     func getRepositories(completion: @escaping DataResponseRepositories) {
-       // api.get(decoder: Repository.self) { (dataResponse) in
-      //      print(dataResponse)
-      //  }
+        
     }
     
 }
