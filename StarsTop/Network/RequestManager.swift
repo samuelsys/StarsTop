@@ -9,8 +9,7 @@
 import Foundation
 
 final class RequestManager: RequestProtocol {
-    
-    private var environment: Environment
+    internal var environment: Environment
     private var apiRequest: RequestProtocol
     private var mockRequest: RequestProtocol
        
@@ -20,12 +19,11 @@ final class RequestManager: RequestProtocol {
         self.mockRequest = mockRequest
     }
     
-    func request<T>(requestModel: RequestModel<T.Type>, completion: @escaping RequestProtocol.Result) where T : Decodable {
-        
+    func request<T>(model: RequestModel<T>, completion: @escaping RequestProtocol.Result) where T : Decodable {
         let req = environment.getCurrent() == Environment.Scheme.mock ? mockRequest : apiRequest
         
-        req.request(requestModel: requestModel) { (dataResponse) in
-            completion(dataResponse)
+        req.request(model: model) { (resultResponse) in
+            completion(resultResponse)
         }
     }
 }

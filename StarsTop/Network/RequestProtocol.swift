@@ -13,7 +13,6 @@ enum HttpMethod {
 
 struct RequestModel<T> {
     let decoder: T.Type
-    let baseUrl: String?
     let path: String
     let method: HttpMethod?
 }
@@ -21,5 +20,7 @@ struct RequestModel<T> {
 protocol RequestProtocol {
     typealias Result = ((Swift.Result<Decodable, Error>) -> Void)
     
-    func request<T: Decodable>(requestModel: RequestModel<T.Type>, completion: @escaping Result)
+    var environment: Environment {get set}
+    
+    func request<T: Decodable>(model: RequestModel<T>, completion: @escaping Result)
 }

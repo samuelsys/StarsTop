@@ -16,6 +16,10 @@ protocol RepoListWorkerProtocol {
 
 class RepoListWorker: RepoListWorkerProtocol {
     
+    private enum RepoListUrlPaths {
+        static let swiftRepositoriesSortedByStars = "/search/repositories?q=language:swift&sort=stars"
+    }
+    
     private let client: RequestProtocol
     
     init(client: RequestProtocol) {
@@ -23,7 +27,11 @@ class RepoListWorker: RepoListWorkerProtocol {
     }
     
     func getRepositories(completion: @escaping DataResponseRepositories) {
-        
+        //client.request(requestModel: RequestModel<Decodable>, completion: <#T##((Result<Decodable, Error>) -> Void)##((Result<Decodable, Error>) -> Void)##(Result<Decodable, Error>) -> Void#>)
+    }
+    
+    private func buildRequestModel()  {
+        //RequestModel(decoder: Repository.self, baseUrl: "", path: RepoListUrlPaths.swiftRepositoriesSortedByStars, method: .get)
     }
     
 }

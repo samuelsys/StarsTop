@@ -15,17 +15,21 @@ enum AlamofireApiError: Error {
 
 final class AlamofireApiRequest: RequestProtocol {
     
-    func request<T: Decodable>(requestModel: RequestModel<T.Type>, completion: @escaping RequestProtocol.Result) {
+    var environment: Environment
+    
+    init(environment: Environment) {
+        self.environment = environment
+    }
+    
+    func request<T: Decodable>(model: RequestModel<T>, completion: @escaping RequestProtocol.Result) {
         
-        guard let method = requestModel.method else {
+        guard let method = model.method else {
             return completion(.failure(AlamofireApiError.noMethodSpecified))
         }
         
-        guard let baseUrl = requestModel.baseUrl else {
-            return completion(.failure(AlamofireApiError.noBaseUrlSpecified))
-        }
+        let baseUrl = environment.getCurrentApiURL()
         
-        AF.request(baseUrl + requestModel.path, method: getAlamofireMethod(method))
+        AF.request(baseUrl + model.path, method: getAlamofireMethod(method))
             .responseDecodable(of: T.self) { (response) in
               switch response.result {
                   case .success(let result):

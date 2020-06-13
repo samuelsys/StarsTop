@@ -7,7 +7,13 @@
 //
 
 final class MockRequest: RequestProtocol {
-    func request<T: Decodable>(requestModel: RequestModel<T.Type>, completion: @escaping RequestProtocol.Result) {
-        // TODO: Build Mock Folder, Get path and return result
+    var environment: Environment
+    
+    init(environment: Environment) {
+        self.environment = environment
+    }
+    
+    func request<T>(model: RequestModel<T>, completion: @escaping RequestProtocol.Result) where T : Decodable {
+        
     }
 }

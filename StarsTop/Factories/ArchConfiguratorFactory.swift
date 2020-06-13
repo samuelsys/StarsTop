@@ -13,7 +13,11 @@ enum ArchConfiguratorFactory {
     
     static func configureInitialArchFlow<T>(decoder: T.Type, viewController: UIViewController) where T: ArchConfiguratorProtocol {
                 
-        let requestManager = RequestManager(environment: Environment(), apiRequest: AlamofireApiRequest(), mockRequest: MockRequest())
+        let appEnvironment = Environment()
+        let apiRequest = AlamofireApiRequest(environment: appEnvironment)
+        let mockRequest = MockRequest(environment: appEnvironment)
+        
+        let requestManager = RequestManager(environment: appEnvironment, apiRequest: apiRequest, mockRequest: mockRequest)
         let model = ArchConfiguratorModel(viewController: viewController, clientRequest: requestManager)
       
         T.configureModule(configuratorModel: model)
