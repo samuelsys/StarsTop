@@ -20,7 +20,11 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
     var interactor: RepoListInteractor?
     var router: RepoListRouter?
     
-    private var items: [String] = []
+    private var items: [RepositoryViewModel] = [] {
+        didSet {
+            repoListView?.tableView.reloadData()
+        }
+    }
     
     // MARK: - Lifecycle Methods
     override func loadView() {
@@ -45,6 +49,7 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
     // MARK: - RepoPresenterOutputProtocol conforms
     
     func presenter(didRetrieveItems items: [RepositoryViewModel]) {
+        self.items = items
     }
     
     func presenter(didFailRetrieveItems message: Error) {
@@ -59,16 +64,13 @@ extension RepoListViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    func tableView(_ tableView: UITableView,
-                   numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }
     
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView
-            .dequeueReusableCell(withIdentifier: "Cell")!
-        cell.textLabel?.text = self.items[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        cell.textLabel?.text = self.items[indexPath.row].name
         cell.selectionStyle = .none
         return cell
     }

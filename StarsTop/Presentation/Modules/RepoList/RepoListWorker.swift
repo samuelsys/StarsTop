@@ -17,7 +17,7 @@ protocol RepoListWorkerProtocol {
 final class RepoListWorker: RepoListWorkerProtocol {
     
     private enum RepoListUrlPaths {
-        static let swiftRepositoriesSortedByStars = "/search/repositories?q=language:swift&sort=stars"
+        static let swiftRepositoriesSortedByStars = "search/repositories?q=language:swift&sort=stars"
     }
     
     private let client: RequestProtocol
