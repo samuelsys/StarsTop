@@ -27,11 +27,16 @@ class RepoListWorker: RepoListWorkerProtocol {
     }
     
     func getRepositories(completion: @escaping DataResponseRepositories) {
-        //client.request(requestModel: RequestModel<Decodable>, completion: <#T##((Result<Decodable, Error>) -> Void)##((Result<Decodable, Error>) -> Void)##(Result<Decodable, Error>) -> Void#>)
+        
+        let requestModel = RequestModel(decoder: Repository.self,
+                                        path: RepoListUrlPaths.swiftRepositoriesSortedByStars,
+                                        method: .get)
+        
+        client.request(model: requestModel) { (result) in
+            
+        }
     }
     
-    private func buildRequestModel()  {
-        //RequestModel(decoder: Repository.self, baseUrl: "", path: RepoListUrlPaths.swiftRepositoriesSortedByStars, method: .get)
-    }
+  
     
 }
