@@ -11,7 +11,7 @@ import Foundation
 typealias DataResponseRepositories = ((repository: Repository?, error: Error?)) -> Void
 
 protocol RepoListWorkerProtocol {
-    func getRepositories(completion: @escaping DataResponseRepositories)
+    func getRepositories(page: Int, completion: @escaping DataResponseRepositories)
 }
 
 final class RepoListWorker: RepoListWorkerProtocol {
@@ -26,11 +26,12 @@ final class RepoListWorker: RepoListWorkerProtocol {
         self.client = client
     }
     
-    func getRepositories(completion: @escaping DataResponseRepositories) {
+    func getRepositories(page: Int, completion: @escaping DataResponseRepositories) {
         
         let requestModel = RequestModel(decoder: Repository.self,
                                         path: RepoListUrlPaths.swiftRepositoriesSortedByStars,
-                                        method: .get)
+                                        method: .get,
+                                        page: page)
         
         client.request(model: requestModel) { (result) in
             switch result {

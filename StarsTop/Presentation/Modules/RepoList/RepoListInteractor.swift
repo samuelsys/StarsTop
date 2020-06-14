@@ -9,7 +9,7 @@
 import Foundation
 
 protocol RepoListInteractorProtocol: class {
-    func viewDidLoad()
+    func loadRepositories(page: Int)
     func didSelectRow(at index: Int)
 }
 
@@ -27,8 +27,8 @@ final class RepoListInteractor {
         self.worker = worker
     }
     
-    func viewDidLoad() {
-        worker.getRepositories { [weak self] (repositoryResponse) in
+    func loadRepositories(page: Int) {
+        worker.getRepositories(page: page) { [weak self] (repositoryResponse) in
                         
             guard let repositoryDecodable = repositoryResponse.repository else {
                 let error = repositoryResponse.error ?? RepoListInteractorError.genericError

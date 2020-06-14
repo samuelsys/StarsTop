@@ -20,6 +20,8 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
     var interactor: RepoListInteractor?
     var router: RepoListRouter?
     
+    var currentPage = 1
+    
     private var items: [RepositoryViewModel] = [] {
         didSet {
             repoListView?.tableView.reloadData()
@@ -34,13 +36,11 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
         repoListView?.tableView.delegate = self
         repoListView?.tableView.dataSource = self
         repoListView?.refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
-
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        interactor?.viewDidLoad()
+        interactor?.loadRepositories(page: currentPage)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,14 +49,14 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
     }
     
     @objc private func refreshWeatherData(_ sender: Any) {
-        // Fetch Weather Data
-        interactor?.viewDidLoad()
+        currentPage = 1
+        interactor?.loadRepositories(page: currentPage)
     }
     
     // MARK: - RepoPresenterOutputProtocol conforms
     
     func presenter(didRetrieveItems items: [RepositoryViewModel]) {
-        self.items = items
+        currentPage == 1 ? self.items = items : self.items.append(contentsOf: items)
         repoListView?.refreshControl.endRefreshing()
     }
     
@@ -67,6 +67,17 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
 // MARK: - UITableView DataSource & Delegate
 
 extension RepoListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+
+        if offsetY > contentHeight - scrollView.frame.size.height {
+            currentPage += 1
+            interactor?.loadRepositories(page: currentPage)
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

@@ -15,6 +15,7 @@ struct RequestModel<T> {
     let decoder: T.Type
     let path: String
     let method: HttpMethod?
+    let page: Int?
 }
 
 protocol RequestProtocol {
