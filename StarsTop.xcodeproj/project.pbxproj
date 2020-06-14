@@ -38,6 +38,9 @@
 		8DC1969C2496771C0074747A /* repositories-page2-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DC1969B2496771C0074747A /* repositories-page2-mock.json */; };
 		8DC1969E249677360074747A /* repositories-page3-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DC1969D249677360074747A /* repositories-page3-mock.json */; };
 		8DC196A02496779A0074747A /* repositories-page4-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DC1969F2496779A0074747A /* repositories-page4-mock.json */; };
+		8DC196A52496AFC00074747A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC196A42496AFC00074747A /* Item.swift */; };
+		8DC196A72496AFD00074747A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC196A62496AFD00074747A /* Repository.swift */; };
+		8DC196A92496AFE00074747A /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC196A82496AFE00074747A /* Owner.swift */; };
 		DEC22B4D9CA989941CA03A70 /* Pods_StarsTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044145F2F03FB04B0914918E /* Pods_StarsTop.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +106,9 @@
 		8DC1969B2496771C0074747A /* repositories-page2-mock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "repositories-page2-mock.json"; sourceTree = "<group>"; };
 		8DC1969D249677360074747A /* repositories-page3-mock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "repositories-page3-mock.json"; sourceTree = "<group>"; };
 		8DC1969F2496779A0074747A /* repositories-page4-mock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "repositories-page4-mock.json"; sourceTree = "<group>"; };
+		8DC196A42496AFC00074747A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		8DC196A62496AFD00074747A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		8DC196A82496AFE00074747A /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		8FD6802C809EFF17A889FE4B /* Pods-StarsTop.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.production.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.production.xcconfig"; sourceTree = "<group>"; };
 		9BD5553F7F611ADB1D2A5769 /* Pods-StarsTop.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.develop.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.develop.xcconfig"; sourceTree = "<group>"; };
 		A64E0D7F9F637716850F056C /* Pods-StarsTopTests.homolog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTopTests.homolog.xcconfig"; path = "Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests.homolog.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 				8D89402E249044F500D2198E /* Network */,
 				8D894007248F126300D2198E /* Application */,
 				8D89401E2490202100D2198E /* Factories */,
+				8DC196A12496AF600074747A /* Models */,
 				8D894008248F126D00D2198E /* Presentation */,
 				8D89400B248F12C800D2198E /* Core */,
 				8D89400A248F12B100D2198E /* Business */,
@@ -341,6 +348,32 @@
 				8DC1969F2496779A0074747A /* repositories-page4-mock.json */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8DC196A12496AF600074747A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8DC196A22496AF840074747A /* Encodable */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8DC196A22496AF840074747A /* Encodable */ = {
+			isa = PBXGroup;
+			children = (
+				8DC196A32496AFB00074747A /* Repository */,
+			);
+			path = Encodable;
+			sourceTree = "<group>";
+		};
+		8DC196A32496AFB00074747A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8DC196A42496AFC00074747A /* Item.swift */,
+				8DC196A62496AFD00074747A /* Repository.swift */,
+				8DC196A82496AFE00074747A /* Owner.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		C161CD733317025827863A66 /* Pods */ = {
@@ -577,6 +610,9 @@
 				8D89406C249118C300D2198E /* RepoListInteractor.swift in Sources */,
 				8D89406E249118C300D2198E /* RepoListViewController.swift in Sources */,
 				8D89406F249118C300D2198E /* RepoListModels.swift in Sources */,
+				8DC196A52496AFC00074747A /* Item.swift in Sources */,
+				8DC196A72496AFD00074747A /* Repository.swift in Sources */,
+				8DC196A92496AFE00074747A /* Owner.swift in Sources */,
 				8DC19681249555460074747A /* RepoListDetailCell.swift in Sources */,
 				8D894070249118C300D2198E /* RepoListConfigurator.swift in Sources */,
 				8D894071249118C300D2198E /* WindowFactory.swift in Sources */,
