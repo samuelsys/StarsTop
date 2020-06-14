@@ -33,6 +33,8 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
         
         repoListView?.tableView.delegate = self
         repoListView?.tableView.dataSource = self
+        repoListView?.refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
+
     }
     
     override func viewDidLoad() {
@@ -46,15 +48,20 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
         self.navigationItem.title = "Repositories"
     }
     
+    @objc private func refreshWeatherData(_ sender: Any) {
+        // Fetch Weather Data
+        interactor?.viewDidLoad()
+    }
+    
     // MARK: - RepoPresenterOutputProtocol conforms
     
     func presenter(didRetrieveItems items: [RepositoryViewModel]) {
         self.items = items
+        repoListView?.refreshControl.endRefreshing()
     }
     
     func presenter(didFailRetrieveItems message: Error) {
     }
-    
 }
 
 // MARK: - UITableView DataSource & Delegate
@@ -69,8 +76,10 @@ extension RepoListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-        cell.textLabel?.text = self.items[indexPath.row].name
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? RepoListDetailCell else {
+            return UITableViewCell()
+        }
+        cell.setup(with: items[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }

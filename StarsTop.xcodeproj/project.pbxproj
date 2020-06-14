@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23AC23CE59BCCDA95A1EBBCF /* Pods_StarsTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59E2833ACDC36A2BBBBE549 /* Pods_StarsTop.framework */; };
+		2CFD0C895B683227D1BA1ED4 /* Pods_StarsTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4C5153B19AFD4CDFD70022 /* Pods_StarsTop.framework */; };
 		8D89406C249118C300D2198E /* RepoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D894012248F144B00D2198E /* RepoListInteractor.swift */; };
 		8D89406E249118C300D2198E /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D894010248F143E00D2198E /* RepoListViewController.swift */; };
 		8D89406F249118C300D2198E /* RepoListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D89401A248F24D500D2198E /* RepoListModels.swift */; };
@@ -32,7 +32,7 @@
 		8DC1967C24941A1F0074747A /* ArchConfiguratorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC1967B24941A1F0074747A /* ArchConfiguratorModel.swift */; };
 		8DC1967E24941B3C0074747A /* ArchConfiguratorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC1967D24941B3C0074747A /* ArchConfiguratorFactory.swift */; };
 		8DC19681249555460074747A /* RepoListDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC19680249555460074747A /* RepoListDetailCell.swift */; };
-		F5204EEF929D691E51143176 /* Pods_StarsTopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C9EAAED74D95990F734F65 /* Pods_StarsTopTests.framework */; };
+		B77C39182A6AE9A1A83D3413 /* Pods_StarsTopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA41E6356F49966BAD372EB8 /* Pods_StarsTopTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D4F0779322686851F373C8C /* Pods-StarsTop.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.production.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.production.xcconfig"; sourceTree = "<group>"; };
-		33D95C9EA7E7B94C703B88A6 /* Pods-StarsTopTests.homolog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTopTests.homolog.xcconfig"; path = "Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests.homolog.xcconfig"; sourceTree = "<group>"; };
-		53DE28EA322315830E39CADA /* Pods-StarsTopTests.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTopTests.mock.xcconfig"; path = "Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests.mock.xcconfig"; sourceTree = "<group>"; };
-		6B596847E2F97DFCB7A16A5C /* Pods-StarsTopTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTopTests.develop.xcconfig"; path = "Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests.develop.xcconfig"; sourceTree = "<group>"; };
-		85723A5D45104961BBBA10B2 /* Pods-StarsTopTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTopTests.production.xcconfig"; path = "Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests.production.xcconfig"; sourceTree = "<group>"; };
+		0C4C5153B19AFD4CDFD70022 /* Pods_StarsTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarsTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23C8F79B39F6ADACF1A20DF4 /* Pods-StarsTop.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.production.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.production.xcconfig"; sourceTree = "<group>"; };
+		266AD5071DA1848EACE83935 /* Pods-StarsTopTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTopTests.production.xcconfig"; path = "Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests.production.xcconfig"; sourceTree = "<group>"; };
+		5200ACE3358B99B07AE14E94 /* Pods-StarsTop.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.mock.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.mock.xcconfig"; sourceTree = "<group>"; };
+		798975D7B3EDE6E819CF31EB /* Pods-StarsTop.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.develop.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.develop.xcconfig"; sourceTree = "<group>"; };
 		8D893FE5248F114F00D2198E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D89400E248F142F00D2198E /* RepoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListView.swift; sourceTree = "<group>"; };
 		8D894010248F143E00D2198E /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
@@ -81,11 +81,11 @@
 		8DC1967B24941A1F0074747A /* ArchConfiguratorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchConfiguratorModel.swift; sourceTree = "<group>"; };
 		8DC1967D24941B3C0074747A /* ArchConfiguratorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchConfiguratorFactory.swift; sourceTree = "<group>"; };
 		8DC19680249555460074747A /* RepoListDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListDetailCell.swift; sourceTree = "<group>"; };
-		9361833234403EB7BF365A4A /* Pods-StarsTop.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.develop.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.develop.xcconfig"; sourceTree = "<group>"; };
-		A2521165746777FB0889C4A4 /* Pods-StarsTop.homolog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.homolog.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.homolog.xcconfig"; sourceTree = "<group>"; };
-		B8C9EAAED74D95990F734F65 /* Pods_StarsTopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarsTopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E59E2833ACDC36A2BBBBE549 /* Pods_StarsTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarsTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5C7DD4026B5B83BC492B040 /* Pods-StarsTop.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.mock.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.mock.xcconfig"; sourceTree = "<group>"; };
+		BD238C365ED582B06B07887E /* Pods-StarsTop.homolog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTop.homolog.xcconfig"; path = "Target Support Files/Pods-StarsTop/Pods-StarsTop.homolog.xcconfig"; sourceTree = "<group>"; };
+		C85D1AF654006026BCB1E7EC /* Pods-StarsTopTests.homolog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTopTests.homolog.xcconfig"; path = "Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests.homolog.xcconfig"; sourceTree = "<group>"; };
+		EC0116829A7A38C2442D1A53 /* Pods-StarsTopTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTopTests.develop.xcconfig"; path = "Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests.develop.xcconfig"; sourceTree = "<group>"; };
+		F27C8F65F2B065A7C7A69CB9 /* Pods-StarsTopTests.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarsTopTests.mock.xcconfig"; path = "Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests.mock.xcconfig"; sourceTree = "<group>"; };
+		FA41E6356F49966BAD372EB8 /* Pods_StarsTopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarsTopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23AC23CE59BCCDA95A1EBBCF /* Pods_StarsTop.framework in Frameworks */,
+				2CFD0C895B683227D1BA1ED4 /* Pods_StarsTop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,18 +101,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5204EEF929D691E51143176 /* Pods_StarsTopTests.framework in Frameworks */,
+				B77C39182A6AE9A1A83D3413 /* Pods_StarsTopTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E7609A77281E7F9DC63E5EA /* Frameworks */ = {
+		19EF177CF8BA4D9CC3567D35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E59E2833ACDC36A2BBBBE549 /* Pods_StarsTop.framework */,
-				B8C9EAAED74D95990F734F65 /* Pods_StarsTopTests.framework */,
+				0C4C5153B19AFD4CDFD70022 /* Pods_StarsTop.framework */,
+				FA41E6356F49966BAD372EB8 /* Pods_StarsTopTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,7 +124,7 @@
 				8DC196372491C63D0074747A /* StarsTopTests */,
 				8D893FE3248F114F00D2198E /* Products */,
 				C161CD733317025827863A66 /* Pods */,
-				7E7609A77281E7F9DC63E5EA /* Frameworks */,
+				19EF177CF8BA4D9CC3567D35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -294,14 +294,14 @@
 		C161CD733317025827863A66 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9361833234403EB7BF365A4A /* Pods-StarsTop.develop.xcconfig */,
-				F5C7DD4026B5B83BC492B040 /* Pods-StarsTop.mock.xcconfig */,
-				A2521165746777FB0889C4A4 /* Pods-StarsTop.homolog.xcconfig */,
-				1D4F0779322686851F373C8C /* Pods-StarsTop.production.xcconfig */,
-				6B596847E2F97DFCB7A16A5C /* Pods-StarsTopTests.develop.xcconfig */,
-				53DE28EA322315830E39CADA /* Pods-StarsTopTests.mock.xcconfig */,
-				33D95C9EA7E7B94C703B88A6 /* Pods-StarsTopTests.homolog.xcconfig */,
-				85723A5D45104961BBBA10B2 /* Pods-StarsTopTests.production.xcconfig */,
+				798975D7B3EDE6E819CF31EB /* Pods-StarsTop.develop.xcconfig */,
+				5200ACE3358B99B07AE14E94 /* Pods-StarsTop.mock.xcconfig */,
+				BD238C365ED582B06B07887E /* Pods-StarsTop.homolog.xcconfig */,
+				23C8F79B39F6ADACF1A20DF4 /* Pods-StarsTop.production.xcconfig */,
+				EC0116829A7A38C2442D1A53 /* Pods-StarsTopTests.develop.xcconfig */,
+				F27C8F65F2B065A7C7A69CB9 /* Pods-StarsTopTests.mock.xcconfig */,
+				C85D1AF654006026BCB1E7EC /* Pods-StarsTopTests.homolog.xcconfig */,
+				266AD5071DA1848EACE83935 /* Pods-StarsTopTests.production.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -313,11 +313,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D89407F249118C300D2198E /* Build configuration list for PBXNativeTarget "StarsTop" */;
 			buildPhases = (
-				CD13D553F465802F1A7B3F08 /* [CP] Check Pods Manifest.lock */,
+				03C7B5CD488D7197748B21EC /* [CP] Check Pods Manifest.lock */,
 				8D89406B249118C300D2198E /* Sources */,
 				8D894079249118C300D2198E /* Frameworks */,
 				8D89407B249118C300D2198E /* Resources */,
-				FF0FD279CB281F71E4019649 /* [CP] Embed Pods Frameworks */,
+				BBBAEC442C6B3AF17F7B95DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -332,11 +332,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DC1963D2491C63D0074747A /* Build configuration list for PBXNativeTarget "StarsTopTests" */;
 			buildPhases = (
-				75A35A5ED1D441648CA818E5 /* [CP] Check Pods Manifest.lock */,
+				2D3A15421FB339B59CA0CBC7 /* [CP] Check Pods Manifest.lock */,
 				8DC196322491C63D0074747A /* Sources */,
 				8DC196332491C63D0074747A /* Frameworks */,
 				8DC196342491C63D0074747A /* Resources */,
-				33EF2B244ACFCBF69EF31FC0 /* [CP] Embed Pods Frameworks */,
+				36DD50B95BC110D9B7E825A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,46 +401,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		33EF2B244ACFCBF69EF31FC0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		75A35A5ED1D441648CA818E5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StarsTopTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD13D553F465802F1A7B3F08 /* [CP] Check Pods Manifest.lock */ = {
+		03C7B5CD488D7197748B21EC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -462,7 +423,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF0FD279CB281F71E4019649 /* [CP] Embed Pods Frameworks */ = {
+		2D3A15421FB339B59CA0CBC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StarsTopTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36DD50B95BC110D9B7E825A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarsTopTests/Pods-StarsTopTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBBAEC442C6B3AF17F7B95DC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -594,7 +594,7 @@
 		};
 		8D636AA424919E920030FF33 /* mock */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5C7DD4026B5B83BC492B040 /* Pods-StarsTop.mock.xcconfig */;
+			baseConfigurationReference = 5200ACE3358B99B07AE14E94 /* Pods-StarsTop.mock.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -670,7 +670,7 @@
 		};
 		8D636AA724919E9D0030FF33 /* production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D4F0779322686851F373C8C /* Pods-StarsTop.production.xcconfig */;
+			baseConfigurationReference = 23C8F79B39F6ADACF1A20DF4 /* Pods-StarsTop.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -807,7 +807,7 @@
 		};
 		8D894080249118C300D2198E /* develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9361833234403EB7BF365A4A /* Pods-StarsTop.develop.xcconfig */;
+			baseConfigurationReference = 798975D7B3EDE6E819CF31EB /* Pods-StarsTop.develop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -828,7 +828,7 @@
 		};
 		8D894081249118C300D2198E /* homolog */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2521165746777FB0889C4A4 /* Pods-StarsTop.homolog.xcconfig */;
+			baseConfigurationReference = BD238C365ED582B06B07887E /* Pods-StarsTop.homolog.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -849,7 +849,7 @@
 		};
 		8DC1963E2491C63D0074747A /* develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B596847E2F97DFCB7A16A5C /* Pods-StarsTopTests.develop.xcconfig */;
+			baseConfigurationReference = EC0116829A7A38C2442D1A53 /* Pods-StarsTopTests.develop.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -924,7 +924,7 @@
 		};
 		8DC1963F2491C63D0074747A /* mock */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53DE28EA322315830E39CADA /* Pods-StarsTopTests.mock.xcconfig */;
+			baseConfigurationReference = F27C8F65F2B065A7C7A69CB9 /* Pods-StarsTopTests.mock.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -993,7 +993,7 @@
 		};
 		8DC196402491C63D0074747A /* homolog */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33D95C9EA7E7B94C703B88A6 /* Pods-StarsTopTests.homolog.xcconfig */;
+			baseConfigurationReference = C85D1AF654006026BCB1E7EC /* Pods-StarsTopTests.homolog.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1062,7 +1062,7 @@
 		};
 		8DC196412491C63D0074747A /* production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85723A5D45104961BBBA10B2 /* Pods-StarsTopTests.production.xcconfig */;
+			baseConfigurationReference = 266AD5071DA1848EACE83935 /* Pods-StarsTopTests.production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";

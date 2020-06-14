@@ -10,11 +10,13 @@ import UIKit
 
 final class RepoListView: UIView {
     
+    let refreshControl = UIRefreshControl()
+    
     // MARK: - Properties
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.rowHeight = 70
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(RepoListDetailCell.self, forCellReuseIdentifier: "Cell")
+        tableView.rowHeight = 100.0
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -33,6 +35,13 @@ final class RepoListView: UIView {
        
         self.backgroundColor = .white
         self.addSubview(tableView)
+        
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
         
         NSLayoutConstraint.activate([
             tableView.leftAnchor.constraint(equalTo: self.leftAnchor),

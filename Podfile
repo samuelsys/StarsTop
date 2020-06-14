@@ -4,6 +4,7 @@ platform :ios, '10.0'
 
 def commoms
   pod "Alamofire"
+  pod "Kingfisher"
 end
 
 def tests

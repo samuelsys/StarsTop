@@ -8,6 +8,9 @@ PODS:
   - KIF (3.7.9):
     - KIF/Core (= 3.7.9)
   - KIF/Core (3.7.9)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
   - Nimble (8.1.1)
   - Quick (3.0.0)
 
@@ -15,6 +18,7 @@ DEPENDENCIES:
   - Alamofire
   - iOSSnapshotTestCase
   - KIF
+  - Kingfisher
   - Nimble
   - Quick
 
@@ -23,6 +27,7 @@ SPEC REPOS:
     - Alamofire
     - iOSSnapshotTestCase
     - KIF
+    - Kingfisher
     - Nimble
     - Quick
 
@@ -30,9 +35,10 @@ SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   iOSSnapshotTestCase: 9ab44cb5aa62b84d31847f40680112e15ec579a6
   KIF: 350f96fb4205972a10e4c1a45774d48b2d8482d8
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
 
-PODFILE CHECKSUM: 28d98c04768948095329fefa46417d0203c2e12c
+PODFILE CHECKSUM: 0b4eaec03c672dfb078434fe189d0ba5fbc1ab9b
 
 COCOAPODS: 1.9.1
