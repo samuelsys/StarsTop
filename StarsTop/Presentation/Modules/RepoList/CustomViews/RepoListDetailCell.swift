@@ -11,6 +11,19 @@ import UIKit
 
 final class RepoListDetailCell: UITableViewCell {
     
+    struct Constants {
+        static let initNotImpementedError = "init(coder:) has not been implemented"
+        
+        struct StackViewBackground {
+            static let margin: CGFloat = 10.0
+            static let cellIdentifier = "Cell"
+        }
+        
+        struct PhotoImageView {
+            static let height: CGFloat = 80.0
+        }
+    }
+    
     private var photoImageView = UIImageView()
     private var repoNameLabel = UILabel()
     private var starsNumberLabel = UILabel()
@@ -32,7 +45,6 @@ final class RepoListDetailCell: UITableViewCell {
     }()
     
     internal func setup(with viewModel: RepositoryViewModel) {
-        
         setupUI()
         
         photoImageView.kf.setImage(with: URL(string: viewModel.photo))
@@ -44,24 +56,27 @@ final class RepoListDetailCell: UITableViewCell {
     private func setupUI() {
         addSubview(stackViewBackground)
         backgroundColor = UIColor.systemGray5
-        setupStackviewBackgroundConstraints()
-        setupPhotoConstraints()
+        setupStackviewBackground()
+        setupPhotoImageView()
     }
     
-    private func setupStackviewBackgroundConstraints() {
+    private func setupStackviewBackground() {
         stackViewBackground.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackViewBackground.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10.0),
-            stackViewBackground.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 10.0),
-            stackViewBackground.topAnchor.constraint(equalTo: self.topAnchor, constant: 10.0),
+            stackViewBackground.leftAnchor.constraint(equalTo: self.leftAnchor,
+                                                      constant: Constants.StackViewBackground.margin),
+            stackViewBackground.rightAnchor.constraint(equalTo: self.rightAnchor,
+                                                       constant: Constants.StackViewBackground.margin),
+            stackViewBackground.topAnchor.constraint(equalTo: self.topAnchor,
+                                                     constant: Constants.StackViewBackground.margin),
             stackViewBackground.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
     
-    private func setupPhotoConstraints() {
+    private func setupPhotoImageView() {
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            photoImageView.widthAnchor.constraint(equalToConstant: 80.0)
+            photoImageView.widthAnchor.constraint(equalToConstant: Constants.PhotoImageView.height)
         ])
     }
 }

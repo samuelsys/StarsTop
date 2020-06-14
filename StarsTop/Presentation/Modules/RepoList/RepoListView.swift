@@ -10,13 +10,23 @@ import UIKit
 
 final class RepoListView: UIView {
     
-    let refreshControl = UIRefreshControl()
+    struct Constants {
+        static let initNotImpementedError = "init(coder:) has not been implemented"
+        
+        struct TableView {
+            static let rowHeight: CGFloat = 100.0
+            static let cellIdentifier = "Cell"
+        }
+    }
     
     // MARK: - Properties
+    
+    let refreshControl = UIRefreshControl()
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(RepoListDetailCell.self, forCellReuseIdentifier: "Cell")
-        tableView.rowHeight = 100.0
+        tableView.register(RepoListDetailCell.self, forCellReuseIdentifier: Constants.TableView.cellIdentifier)
+        tableView.rowHeight = Constants.TableView.rowHeight
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -36,7 +46,7 @@ final class RepoListView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(Constants.initNotImpementedError)
     }
     
     // MARK: - Private Methods

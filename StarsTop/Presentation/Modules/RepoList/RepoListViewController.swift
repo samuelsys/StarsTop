@@ -16,13 +16,22 @@ protocol RepoListPresenterOutputProtocol: class {
 
 final class RepoListViewController: UIViewController, RepoListPresenterOutputProtocol {
     
+    private struct Constants {
+        static let navigationItemTile = "Github Repositories"
+        static let errorDefaultTitle = "Ops..."
+        static let errorNotLoadedMessage = "Can't load data, try again"
+        static let alertButtonOkAction = "Ok"
+        static let tableViewCellIdentifier = "Cell"
+    }
+    
     // MARK: - Properties
+    
     var repoListView: RepoListView?
     var interactor: RepoListInteractor?
     var router: RepoListRouter?
     
-    var currentPage = 1
-    var itemsUpdated = false
+    private var currentPage = 1
+    private var itemsUpdated = false
     
     private var items: [RepositoryViewModel] = [] {
         didSet {
@@ -31,6 +40,7 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
     }
     
     // MARK: - Lifecycle Methods
+    
     override func loadView() {
         super.loadView()
         self.view = repoListView
@@ -47,18 +57,12 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = "Repositories"
+        self.navigationItem.title = Constants.navigationItemTile
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         repoListView?.loadingView.startAnimating()
-    }
-    
-    @objc private func refreshWeatherData(_ sender: Any) {
-        currentPage = 1
-        repoListView?.loadingView.stopAnimating()
-        interactor?.loadRepositories(page: currentPage)
     }
     
     // MARK: - RepoPresenterOutputProtocol conforms
@@ -70,11 +74,11 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
     }
     
     func presenter(didFailRetrieveItems error: Error) {
-        asyncFinished(withSuccess: false, title: "Ops", message: "Não foi possível carregar os dados")
+        asyncFinished(withSuccess: false, title: Constants.errorDefaultTitle, message: Constants.errorNotLoadedMessage)
     }
     
     func presenter(didFailRetrieveItemsWithMessage message: String) {
-        asyncFinished(withSuccess: false, title: "Ops", message: message)
+        asyncFinished(withSuccess: false, title: Constants.errorDefaultTitle, message: message)
     }
     
     // MARK: - Private functions
@@ -86,6 +90,12 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
         if let title = title, let message = message {
             displayAlert(title: title, message: message)
         }
+    }
+    
+    @objc private func refreshWeatherData(_ sender: Any) {
+        currentPage = 1
+        repoListView?.loadingView.stopAnimating()
+        interactor?.loadRepositories(page: currentPage)
     }
     
     private func startLoading() {
@@ -100,7 +110,7 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
       
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
       
-        alert.addAction((UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+        alert.addAction((UIAlertAction(title: Constants.alertButtonOkAction, style: .default, handler: { (action) -> Void in
             alert.dismiss(animated: true, completion: nil)
         })))
         self.present(alert, animated: true, completion: nil)
@@ -131,7 +141,7 @@ extension RepoListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? RepoListDetailCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.tableViewCellIdentifier) as? RepoListDetailCell else {
             return UITableViewCell()
         }
         cell.setup(with: items[indexPath.row])

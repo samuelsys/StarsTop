@@ -18,6 +18,7 @@ final class RepoListWorker: RepoListWorkerProtocol {
     
     private enum RepoListUrlPaths {
         static let swiftRepositoriesSortedByStars = "search/repositories?q=language:swift&sort=stars"
+        static let mockPath = "repositories-page"
     }
     
     private let client: RequestProtocol
@@ -30,7 +31,7 @@ final class RepoListWorker: RepoListWorkerProtocol {
         
         let requestModel = RequestModel(decoder: Repository.self,
                                         urlPath: RepoListUrlPaths.swiftRepositoriesSortedByStars,
-                                        mockPath: "repositories-page",
+                                        mockPath: RepoListUrlPaths.mockPath,
                                         method: .get,
                                         page: page)
         
