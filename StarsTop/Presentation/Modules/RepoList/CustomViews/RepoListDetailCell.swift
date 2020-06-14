@@ -42,13 +42,13 @@ final class RepoListDetailCell: UITableViewCell {
     }
     
     private func setupUI() {
-        self.addSubview(stackViewBackground)
+        addSubview(stackViewBackground)
+        backgroundColor = UIColor.systemGray5
         setupStackviewBackgroundConstraints()
         setupPhotoConstraints()
     }
     
     private func setupStackviewBackgroundConstraints() {
-
         stackViewBackground.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackViewBackground.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10.0),

@@ -15,10 +15,6 @@ protocol RepoListInteractorProtocol: class {
 
 final class RepoListInteractor {
     
-    private enum RepoListInteractorError: Error {
-        case genericError
-    }
-    
     private var presenter: RepoListInteractorOutputProtocol
     private var worker: RepoListWorkerProtocol
     
@@ -31,11 +27,15 @@ final class RepoListInteractor {
         worker.getRepositories(page: page) { [weak self] (repositoryResponse) in
                         
             guard let repositoryDecodable = repositoryResponse.repository else {
-                let error = repositoryResponse.error ?? RepoListInteractorError.genericError
-                self?.presenter.interactor(didFailRetrieveRepositories: error)
+                self?.presenter.interactor(didFailRetrieveRepositories: repositoryResponse.error ?? RequestError.genericError)
                 return
             }
-            self?.presenter.interactor(didRetrieveRepositories: repositoryDecodable.toRepositoryViewModelList())
+            
+            if let message = repositoryDecodable.message, repositoryDecodable.items == nil {
+                self?.presenter.interactor(didFailRetrieveRepositoriesWithMessage: message)
+            } else {
+                self?.presenter.interactor(didRetrieveRepositories: repositoryDecodable.toRepositoryViewModelList())
+            }
         }
     }
     
@@ -46,7 +46,8 @@ final class RepoListInteractor {
 
 extension Repository {
     func toRepositoryViewModelList() -> [RepositoryViewModel] {
-        return self.items.map { (item) -> RepositoryViewModel in
+        guard let items = self.items else { return [] }
+        return items.map { (item) -> RepositoryViewModel in
             return RepositoryViewModel(name: item.name, stars: item.stars, photo: item.owner.avatarUrl, author: item.owner.login)
         }
     }

@@ -29,7 +29,8 @@ final class RepoListWorker: RepoListWorkerProtocol {
     func getRepositories(page: Int, completion: @escaping DataResponseRepositories) {
         
         let requestModel = RequestModel(decoder: Repository.self,
-                                        path: RepoListUrlPaths.swiftRepositoriesSortedByStars,
+                                        urlPath: RepoListUrlPaths.swiftRepositoriesSortedByStars,
+                                        mockPath: "repositories-page",
                                         method: .get,
                                         page: page)
         

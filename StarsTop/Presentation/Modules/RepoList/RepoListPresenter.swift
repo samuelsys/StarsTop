@@ -11,6 +11,7 @@ import Foundation
 protocol RepoListInteractorOutputProtocol: class {
     func interactor(didRetrieveRepositories repositories: [RepositoryViewModel])
     func interactor(didFailRetrieveRepositories error: Error)
+    func interactor(didFailRetrieveRepositoriesWithMessage message: String)
 }
 
 final class RepoListPresenter: RepoListInteractorOutputProtocol {
@@ -27,4 +28,7 @@ final class RepoListPresenter: RepoListInteractorOutputProtocol {
         viewController?.presenter(didFailRetrieveItems: error)
     }
     
+    func interactor(didFailRetrieveRepositoriesWithMessage message: String) {
+        viewController?.presenter(didFailRetrieveItemsWithMessage: message)
+    }
 }

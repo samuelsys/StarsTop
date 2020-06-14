@@ -8,10 +8,6 @@
 
 import Alamofire
 
-enum AlamofireApiError: Error {
-    case noMethodSpecified
-}
-
 final class AlamofireApiRequest: RequestProtocol {
     
     var environment: Environment
@@ -22,25 +18,36 @@ final class AlamofireApiRequest: RequestProtocol {
     
     func request<T: Decodable>(model: RequestModel<T>, completion: @escaping RequestProtocol.Result) {
         
-        var pageString = String()
+        var fullPath = String()
         
         guard let method = model.method else {
-            return completion(.failure(AlamofireApiError.noMethodSpecified))
+            return completion(.failure(RequestError.noMethodSpecified))
+        }
+        
+        if let urlPath = model.urlPath {
+           fullPath = fullPath + urlPath
         }
         
         if let page = model.page {
-           pageString = "&page=" + String(page)
+           fullPath = fullPath + "&page=" + String(page)
         }
         
         let baseUrl = environment.getCurrentApiURL()
         
-        AF.request(baseUrl + model.path + pageString, method: getAlamofireMethod(method))
+        print(fullPath)
+        
+        AF.request(baseUrl + fullPath, method: getAlamofireMethod(method))
             .responseDecodable(of: T.self) { (response) in
               switch response.result {
                   case .success(let result):
                     completion(.success(result))
                   case .failure(let error):
-                    completion(.failure(error))
+                    switch error {
+                    case .responseSerializationFailed(_):
+                        completion(.failure(RequestError.couldNotDecodeObject))
+                    default:
+                        completion(.failure(RequestError.genericError))
+                    }
               }
         }
     }

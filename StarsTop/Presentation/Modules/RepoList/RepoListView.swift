@@ -21,7 +21,15 @@ final class RepoListView: UIView {
         return tableView
     }()
     
+    lazy var loadingView: UIActivityIndicatorView = {
+        let indicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        indicatorView.color = .blue
+        return indicatorView
+    }()
+    
     // MARK: - Initialization
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -31,23 +39,40 @@ final class RepoListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Private Methods
+    
     private func setupUI() {
-       
-        self.backgroundColor = .white
-        self.addSubview(tableView)
-        
-        // Add Refresh Control to Table View
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.addSubview(refreshControl)
-        }
+        backgroundColor = .white
+        setupTableView()
+        setupLoadingView()
+        setupRefreshControl()
+    }
+    
+    private func setupLoadingView() {
+        addSubview(loadingView)
+           
+        NSLayoutConstraint.activate([
+           loadingView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+           loadingView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+    }
+    
+    private func setupTableView() {
+        addSubview(tableView)
         
         NSLayoutConstraint.activate([
             tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: self.rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            tableView.topAnchor.constraint(equalTo: self.topAnchor),
+            tableView.topAnchor.constraint(equalTo: self.topAnchor)
         ])
+    }
+    
+    private func setupRefreshControl() {
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
     }
 }

@@ -27,10 +27,12 @@ enum RepoList {
 
 struct Repository: Decodable {
    
-    let items: [Item]
+    let items: [Item]?
+    let message: String?
 
     enum CodingKeys: String, CodingKey {
         case items
+        case message
     }
 }
 

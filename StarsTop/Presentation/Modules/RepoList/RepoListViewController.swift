@@ -11,6 +11,7 @@ import UIKit
 protocol RepoListPresenterOutputProtocol: class {
     func presenter(didRetrieveItems items: [RepositoryViewModel])
     func presenter(didFailRetrieveItems error: Error)
+    func presenter(didFailRetrieveItemsWithMessage message: String)
 }
 
 final class RepoListViewController: UIViewController, RepoListPresenterOutputProtocol {
@@ -21,6 +22,7 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
     var router: RepoListRouter?
     
     var currentPage = 1
+    var itemsUpdated = false
     
     private var items: [RepositoryViewModel] = [] {
         didSet {
@@ -48,19 +50,60 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
         self.navigationItem.title = "Repositories"
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        repoListView?.loadingView.startAnimating()
+    }
+    
     @objc private func refreshWeatherData(_ sender: Any) {
         currentPage = 1
+        repoListView?.loadingView.stopAnimating()
         interactor?.loadRepositories(page: currentPage)
     }
     
     // MARK: - RepoPresenterOutputProtocol conforms
     
     func presenter(didRetrieveItems items: [RepositoryViewModel]) {
+        asyncFinished(withSuccess: true, title: nil, message: nil)
         currentPage == 1 ? self.items = items : self.items.append(contentsOf: items)
         repoListView?.refreshControl.endRefreshing()
     }
     
-    func presenter(didFailRetrieveItems message: Error) {
+    func presenter(didFailRetrieveItems error: Error) {
+        asyncFinished(withSuccess: false, title: "Ops", message: "Não foi possível carregar os dados")
+    }
+    
+    func presenter(didFailRetrieveItemsWithMessage message: String) {
+        asyncFinished(withSuccess: false, title: "Ops", message: message)
+    }
+    
+    // MARK: - Private functions
+    
+    private func asyncFinished(withSuccess: Bool, title: String? , message: String?) {
+        stopLoading()
+        itemsUpdated = withSuccess
+        
+        if let title = title, let message = message {
+            displayAlert(title: title, message: message)
+        }
+    }
+    
+    private func startLoading() {
+        repoListView?.loadingView.startAnimating()
+    }
+    
+    private func stopLoading() {
+        repoListView?.loadingView.stopAnimating()
+    }
+    
+    private func displayAlert(title: String, message: String) {
+      
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+      
+        alert.addAction((UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            alert.dismiss(animated: true, completion: nil)
+        })))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -73,7 +116,8 @@ extension RepoListViewController: UITableViewDelegate, UITableViewDataSource {
         let contentHeight = scrollView.contentSize.height
 
         if offsetY > contentHeight - scrollView.frame.size.height {
-            currentPage += 1
+            currentPage = itemsUpdated ? currentPage + 1 : currentPage
+            repoListView?.loadingView.startAnimating()
             interactor?.loadRepositories(page: currentPage)
         }
     }

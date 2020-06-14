@@ -6,6 +6,15 @@
 //  Copyright © 2020 Test. All rights reserved.
 //
 
+enum RequestError: Error {
+    case noMethodSpecified
+    case noPathSpecified
+    case noPageSpecified
+    case noPageFound
+    case couldNotDecodeObject
+    case genericError
+}
+
 enum HttpMethod {
     case get
     case post
@@ -13,7 +22,8 @@ enum HttpMethod {
 
 struct RequestModel<T> {
     let decoder: T.Type
-    let path: String
+    let urlPath: String?
+    let mockPath: String?
     let method: HttpMethod?
     let page: Int?
 }
