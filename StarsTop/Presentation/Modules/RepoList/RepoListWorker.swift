@@ -16,22 +16,28 @@ protocol RepoListWorkerProtocol {
 
 final class RepoListWorker: RepoListWorkerProtocol {
     
-    private enum RepoListUrlPaths {
+    private enum Constants {
         static let swiftRepositoriesSortedByStars = "search/repositories?q=language:swift&sort=stars"
         static let mockPath = "repositories-page"
     }
     
+    // MARK: - Properties
+    
     private let client: RequestProtocol
+    
+    // MARK: - Initialization
     
     init(client: RequestProtocol) {
         self.client = client
     }
     
+    // MARK: - RepoListWorkerProtocol Conforms
+    
     func getRepositories(page: Int, completion: @escaping DataResponseRepositories) {
         
         let requestModel = RequestModel(decoder: Repository.self,
-                                        urlPath: RepoListUrlPaths.swiftRepositoriesSortedByStars,
-                                        mockPath: RepoListUrlPaths.mockPath,
+                                        urlPath: Constants.swiftRepositoriesSortedByStars,
+                                        mockPath: Constants.mockPath,
                                         method: .get,
                                         page: page)
         

@@ -10,18 +10,23 @@ import Foundation
 
 protocol RepoListInteractorProtocol: class {
     func loadRepositories(page: Int)
-    func didSelectRow(at index: Int)
 }
 
 final class RepoListInteractor {
     
+    // MARK: - Properties
+    
     private var presenter: RepoListInteractorOutputProtocol
     private var worker: RepoListWorkerProtocol
+    
+    // MARK: - Initialization
     
     init(presenter: RepoListInteractorOutputProtocol, worker: RepoListWorkerProtocol) {
         self.presenter = presenter
         self.worker = worker
     }
+    
+    // MARK: - RepoListInteractorProtocol Conforms
     
     func loadRepositories(page: Int) {
         worker.getRepositories(page: page) { [weak self] (repositoryResponse) in
@@ -38,10 +43,6 @@ final class RepoListInteractor {
             }
         }
     }
-    
-    func didSelectRow(at index: Int) {
-    }
-    
 }
 
 extension Repository {

@@ -11,11 +11,12 @@ import UIKit
 
 final class RepoListDetailCell: UITableViewCell {
     
-    struct Constants {
+    private struct Constants {
         static let initNotImpementedError = "init(coder:) has not been implemented"
         
         struct StackViewBackground {
             static let margin: CGFloat = 10.0
+            static let spacing: CGFloat = 20.0
             static let cellIdentifier = "Cell"
         }
         
@@ -23,6 +24,8 @@ final class RepoListDetailCell: UITableViewCell {
             static let height: CGFloat = 80.0
         }
     }
+    
+    // MARK: - Properties
     
     private var photoImageView = UIImageView()
     private var repoNameLabel = UILabel()
@@ -39,10 +42,12 @@ final class RepoListDetailCell: UITableViewCell {
     lazy var stackViewBackground: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.photoImageView, self.stackViewInfo])
         stackView.distribution = .fill
-        stackView.spacing = 20.0
+        stackView.spacing = Constants.StackViewBackground.spacing
         stackView.axis = .horizontal
         return stackView
     }()
+    
+    // MARK: - Internal Methods
     
     internal func setup(with viewModel: RepositoryViewModel) {
         setupUI()
@@ -52,6 +57,8 @@ final class RepoListDetailCell: UITableViewCell {
         starsNumberLabel.text = String(viewModel.stars)
         authorNameLabel.text = viewModel.author
     }
+    
+    // MARK: - Private Methods
     
     private func setupUI() {
         addSubview(stackViewBackground)
@@ -63,13 +70,13 @@ final class RepoListDetailCell: UITableViewCell {
     private func setupStackviewBackground() {
         stackViewBackground.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackViewBackground.leftAnchor.constraint(equalTo: self.leftAnchor,
+            stackViewBackground.leftAnchor.constraint(equalTo: leftAnchor,
                                                       constant: Constants.StackViewBackground.margin),
-            stackViewBackground.rightAnchor.constraint(equalTo: self.rightAnchor,
+            stackViewBackground.rightAnchor.constraint(equalTo: rightAnchor,
                                                        constant: Constants.StackViewBackground.margin),
-            stackViewBackground.topAnchor.constraint(equalTo: self.topAnchor,
+            stackViewBackground.topAnchor.constraint(equalTo: topAnchor,
                                                      constant: Constants.StackViewBackground.margin),
-            stackViewBackground.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            stackViewBackground.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     

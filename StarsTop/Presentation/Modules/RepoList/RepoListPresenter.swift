@@ -16,6 +16,8 @@ protocol RepoListInteractorOutputProtocol: class {
 
 final class RepoListPresenter: RepoListInteractorOutputProtocol {
     
+    // MARK: - Properties
+    
     weak var viewController: RepoListPresenterOutputProtocol?
     
     // MARK: - RepoListPresenterProtocol conforms
