@@ -23,9 +23,4 @@ target 'StarsTop' do
     tests
   end
   
-  target 'StarsTopUITests' do
-      inherit! :search_paths
-      tests
-  end
-
 end

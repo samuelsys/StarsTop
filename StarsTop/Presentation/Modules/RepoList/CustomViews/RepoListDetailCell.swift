@@ -23,6 +23,11 @@ final class RepoListDetailCell: UITableViewCell {
         struct PhotoImageView {
             static let height: CGFloat = 80.0
         }
+        
+        struct CellPrefix {
+            static let stars: String = "Stars: "
+            static let author: String = "By: "
+        }
     }
     
     // MARK: - Properties
@@ -54,8 +59,8 @@ final class RepoListDetailCell: UITableViewCell {
         
         photoImageView.kf.setImage(with: URL(string: viewModel.photo))
         repoNameLabel.text = viewModel.name
-        starsNumberLabel.text = String(viewModel.stars)
-        authorNameLabel.text = viewModel.author
+        starsNumberLabel.text = Constants.CellPrefix.stars + String(viewModel.stars)
+        authorNameLabel.text = Constants.CellPrefix.author + viewModel.author
     }
     
     // MARK: - Private Methods
