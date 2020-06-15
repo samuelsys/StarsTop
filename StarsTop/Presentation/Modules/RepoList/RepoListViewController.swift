@@ -31,9 +31,9 @@ final class RepoListViewController: UIViewController, RepoListPresenterOutputPro
     var router: RepoListRouter?
     
     private var currentPage = 1
-    private var itemsUpdated = false
+    private(set) var itemsUpdated = false
     
-    private var items: [RepositoryViewModel] = [] {
+    private(set) var items: [RepositoryViewModel] = [] {
         didSet {
             repoListView?.tableView.reloadData()
         }

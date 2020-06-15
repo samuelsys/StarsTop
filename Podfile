@@ -9,7 +9,7 @@ end
 
 def tests
   pod 'Quick'
-  pod "Nimble"
+  pod 'Nimble'
   pod "KIF"
   pod "iOSSnapshotTestCase"
 end
@@ -22,10 +22,10 @@ target 'StarsTop' do
     inherit! :search_paths
     tests
   end
-end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    puts "#{target.name}"
+  
+  target 'StarsTopUITests' do
+      inherit! :search_paths
+      tests
   end
+
 end

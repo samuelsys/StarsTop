@@ -27,19 +27,19 @@ final class RepoListDetailCell: UITableViewCell {
     
     // MARK: - Properties
     
-    private var photoImageView = UIImageView()
-    private var repoNameLabel = UILabel()
-    private var starsNumberLabel = UILabel()
-    private var authorNameLabel = UILabel()
+    var photoImageView = UIImageView()
+    var repoNameLabel = UILabel()
+    var starsNumberLabel = UILabel()
+    var authorNameLabel = UILabel()
     
-    lazy var stackViewInfo: UIStackView = {
+    private(set) lazy var stackViewInfo: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.repoNameLabel, self.starsNumberLabel, self.authorNameLabel])
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         return stackView
     }()
     
-    lazy var stackViewBackground: UIStackView = {
+    private(set) lazy var stackViewBackground: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.photoImageView, self.stackViewInfo])
         stackView.distribution = .fill
         stackView.spacing = Constants.StackViewBackground.spacing

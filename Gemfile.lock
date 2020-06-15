@@ -247,7 +247,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cocoapods
+  cocoapods (~> 1.9)
   fastlane
   slather
 

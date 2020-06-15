@@ -20,3 +20,12 @@ enum RepoList {
         }
     }
 }
+
+extension RepositoryViewModel: Equatable {
+    static func == (lhs: RepositoryViewModel, rhs: RepositoryViewModel) -> Bool {
+      return lhs.name == rhs.name &&
+              lhs.stars == rhs.stars &&
+              lhs.photo == rhs.photo &&
+              lhs.author == rhs.author
+    }
+}

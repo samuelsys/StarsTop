@@ -33,9 +33,7 @@ final class AlamofireApiRequest: RequestProtocol {
         }
         
         let baseUrl = environment.getCurrentApiURL()
-        
-        print(fullPath)
-        
+                
         AF.request(baseUrl + fullPath, method: getAlamofireMethod(method))
             .responseDecodable(of: T.self) { (response) in
               switch response.result {
