@@ -33,9 +33,9 @@ class RepoListDetailCellSpec: QuickSpec {
                 it("should have name, stars, photo and author set in cell UI attributes") {
                     
                     expect(repoListDetailCell.photoImageView).toNot(beNil())
-                    expect(repoListDetailCell.authorNameLabel.text).to(equal("author"))
+                    expect(repoListDetailCell.authorNameLabel.text).to(equal("By: author"))
                     expect(repoListDetailCell.repoNameLabel.text).to(equal("repo1"))
-                    expect(repoListDetailCell.starsNumberLabel.text).to(equal("5"))
+                    expect(repoListDetailCell.starsNumberLabel.text).to(equal("Stars: 5"))
                 }
             }
            
